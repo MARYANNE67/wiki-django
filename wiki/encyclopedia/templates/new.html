@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block body %}
+<form method='POST' action="{%url 'wiki:new'%}"> 
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" placeholder="Title">
+    <br>
+
+    <label for="content">Content:</label>
+    <br>
+    <textarea name="content"></textarea>
+    <br>
+    <input type="submit" class='btn btn-primary' >
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   {{entry}}
+   
+{% endblock %}
+
+{% block body %}
+
+            <form action='{%url 'wiki:edit'%}' method='POST'>
+               {%csrf_token%}
+               <button type ='submit'><i class="fas fa-edit"></i></button>
+               <input type='hidden' name ='title' value={{entry}}>         
+            </form>
+
+            {{content|safe}}
+       
+  
+   
+
+{% endblock %}

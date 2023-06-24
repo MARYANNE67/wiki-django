@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   {{entry}}
+{% endblock %}
+
+{% block body %}
+
+<h4>Searches for  "{{entry}}"</h4>
+    {%for entry in recommendation %}
+
+        <li class="list-group-item list-group-item-action"><a  href="{%url 'wiki:entry' title=entry %}">{{entry}}</a></li>
+{% endfor%}
+
+{% endblock %}
